@@ -1052,8 +1052,31 @@ select {
   transition: color var(--transition), transform var(--transition);
 }
 
+.contact-link {
+  position: relative;
+  display: inline-flex;
+  margin-left: 0.35rem;
+  color: var(--text-main);
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.contact-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.08rem;
+  width: 100%;
+  height: 1px;
+  background: rgba(199, 75, 127, 0.45);
+  transform-origin: left;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
 .social-link:hover,
-.social-link:focus-visible {
+.social-link:focus-visible,
+.contact-link:hover,
+.contact-link:focus-visible {
   color: var(--accent);
   transform: translateY(-1px);
 }
