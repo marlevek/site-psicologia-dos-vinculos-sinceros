@@ -1,0 +1,19 @@
+﻿# Sistema
+Thumbs.db
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# DependÃªncias futuras
+node_modules/
+
+# Build e cache
+dist/
+build/
+.cache/
+
