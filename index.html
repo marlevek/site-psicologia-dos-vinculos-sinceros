@@ -9,7 +9,7 @@
     content="Carolina Cunha Levek é psicóloga em Curitiba com atendimento online e presencial, abordagem sistêmica e foco em vínculos, relacionamentos e segurança emocional."
   >
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#F5EFE6">
+  <meta name="theme-color" content="#F6F1FB">
   <link rel="canonical" href="https://www.carolinacunhalevek.com.br/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,400;1,500;1,600&family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600;700&display=swap"
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css">
@@ -77,12 +77,13 @@
 
   <a
     class="floating-whatsapp"
-    href="https://wa.me/5500000000000?text=Olá%2C%20Carol!%20Gostaria%20de%20agendar%20minha%20primeira%20sessão."
+    href="https://wa.me/554196581991?text=Olá%2C%20Carol!%20Gostaria%20de%20agendar%20minha%20primeira%20sessão."
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Falar com Carolina Cunha Levek no WhatsApp"
   >
-    <span aria-hidden="true">WhatsApp</span>
+    <span class="floating-whatsapp-dot" aria-hidden="true"></span>
+    <span class="floating-whatsapp-label">WhatsApp</span>
   </a>
 
   <header class="site-header">
@@ -91,9 +92,31 @@
         <span class="eyebrow">Psicologia dos Vínculos Sinceros</span>
         <p class="brand-name">Carolina Cunha Levek</p>
       </div>
+
       <nav class="top-nav" aria-label="Navegação principal">
         <a href="#sobre-a-terapia">Sobre a terapia</a>
-        <a href="#sobre-a-carol">A Carol</a>
+        <a href="#sobre-a-carol">Sobre mim</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#agendar">Agendar</a>
+      </nav>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Abrir menu de navegação"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="mobile-nav-panel" id="mobile-menu" hidden>
+      <nav class="mobile-nav container" aria-label="Navegação mobile">
+        <a href="#sobre-a-terapia">Sobre a terapia</a>
+        <a href="#sobre-a-carol">Sobre mim</a>
         <a href="#como-funciona">Como funciona</a>
         <a href="#agendar">Agendar</a>
       </nav>
@@ -115,7 +138,7 @@
             <a class="btn btn-primary" href="#agendar">Agendar primeira sessão</a>
             <a
               class="btn btn-secondary"
-              href="https://wa.me/5500000000000?text=Olá%2C%20Carol!%20Gostaria%20de%20agendar%20minha%20primeira%20sessão."
+              href="https://wa.me/554196581991?text=Olá%2C%20Carol!%20Gostaria%20de%20agendar%20minha%20primeira%20sessão."
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -126,11 +149,15 @@
 
         <div class="hero-art" data-reveal>
           <div class="hero-art-card">
+            <span class="art-label">Escuta sistêmica</span>
             <p class="quote-mark">"</p>
             <p class="hero-quote">
               Vínculos sinceros começam quando você se reconhece com mais verdade, presença e cuidado.
             </p>
-            <span class="hero-signature">Carol</span>
+            <div class="hero-art-footer">
+              <span class="hero-signature">Carol</span>
+              <span class="hero-rule" aria-hidden="true"></span>
+            </div>
           </div>
         </div>
       </div>
@@ -152,18 +179,23 @@
 
         <div class="cards-grid">
           <article class="soft-card" data-reveal>
+            <span class="card-index">01</span>
             <p>Você se doa muito e, mesmo assim, se sente frustrada(o)?</p>
           </article>
           <article class="soft-card" data-reveal>
+            <span class="card-index">02</span>
             <p>Tem medo de abandono ou rejeição?</p>
           </article>
           <article class="soft-card" data-reveal>
+            <span class="card-index">03</span>
             <p>Percebe que repete padrões que te machucam?</p>
           </article>
           <article class="soft-card" data-reveal>
+            <span class="card-index">04</span>
             <p>Sente dificuldade em se comunicar ou se posicionar?</p>
           </article>
           <article class="soft-card" data-reveal>
+            <span class="card-index">05</span>
             <p>Vive relações intensas, mas instáveis?</p>
           </article>
         </div>
@@ -183,7 +215,7 @@
     <!-- Seção 3: Sobre a terapia -->
     <section class="content-section therapy-section" id="sobre-a-terapia">
       <div class="container split-layout">
-        <div class="section-heading" data-reveal>
+        <div class="section-heading therapy-copy" data-reveal>
           <span class="eyebrow">Escuta e construção</span>
           <h2>Sobre a terapia</h2>
           <p>
@@ -191,14 +223,15 @@
           </p>
         </div>
 
-        <div class="list-panel" data-reveal>
+        <aside class="list-panel therapy-panel" data-reveal aria-label="Possibilidades da terapia">
+          <p class="panel-intro">Na prática, esse espaço pode te ajudar a:</p>
           <ul class="icon-list">
             <li>Reconhecer seus padrões</li>
             <li>Entender suas emoções</li>
             <li>Se posicionar com mais clareza</li>
             <li>Construir relações mais saudáveis e conscientes</li>
           </ul>
-        </div>
+        </aside>
       </div>
     </section>
 
@@ -211,9 +244,11 @@
     <!-- Seção 4: Como posso ajudar -->
     <section class="statement-section">
       <div class="container narrow">
-        <p class="statement-text" data-reveal>
-          Ajudo pessoas a compreenderem seus padrões de relacionamento e construírem vínculos mais saudáveis, com mais consciência, leveza e autenticidade.
-        </p>
+        <div class="statement-shell" data-reveal>
+          <p class="statement-text">
+            Ajudo pessoas a compreenderem seus padrões de relacionamento e construírem vínculos mais saudáveis, com mais consciência, leveza e autenticidade.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -225,7 +260,7 @@
 
     <!-- Seção 5: Benefícios -->
     <section class="content-section benefits-section">
-      <div class="container">
+      <div class="container benefits-layout">
         <div class="section-heading" data-reveal>
           <span class="eyebrow">Transformações possíveis</span>
           <h2>O que você pode conquistar</h2>
@@ -233,18 +268,23 @@
 
         <div class="benefits-list">
           <article class="benefit-item" data-reveal>
+            <strong class="benefit-number">01</strong>
             <span>Melhorar sua comunicação nos relacionamentos</span>
           </article>
           <article class="benefit-item" data-reveal>
+            <strong class="benefit-number">02</strong>
             <span>Desenvolver mais segurança emocional</span>
           </article>
           <article class="benefit-item" data-reveal>
+            <strong class="benefit-number">03</strong>
             <span>Entender por que certas situações se repetem</span>
           </article>
           <article class="benefit-item" data-reveal>
+            <strong class="benefit-number">04</strong>
             <span>Criar limites mais saudáveis</span>
           </article>
           <article class="benefit-item" data-reveal>
+            <strong class="benefit-number">05</strong>
             <span>Construir relações mais equilibradas</span>
           </article>
         </div>
@@ -257,23 +297,25 @@
       </svg>
     </div>
 
-    <!-- Seção 6: Sobre a Carol -->
+    <!-- Seção 6: Sobre mim -->
     <section class="content-section about-section" id="sobre-a-carol">
       <div class="container about-grid">
         <div class="about-photo-wrap" data-reveal>
-          <!-- Placeholder da foto da Carol: substituir src por imagem oficial quando disponível -->
-          <img
-            class="about-photo"
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 560 700'%3E%3Crect width='560' height='700' rx='48' fill='%23C17A5A'/%3E%3Cpath d='M108 535c36-136 116-230 172-230 83 0 128 82 165 230' fill='none' stroke='%23FDF6EF' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='287' cy='237' r='92' fill='none' stroke='%23FDF6EF' stroke-width='4'/%3E%3Cpath d='M92 589c85 43 160 60 226 60 64 0 106-10 150-28' fill='none' stroke='%23FDF6EF' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M408 110c23 17 41 38 52 62' fill='none' stroke='%23F5EFE6' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M136 146c25-27 55-45 90-55' fill='none' stroke='%23F5EFE6' stroke-width='3' stroke-linecap='round'/%3E%3Ctext x='50%25' y='91%25' text-anchor='middle' fill='%23FDF6EF' font-size='30' font-family='Georgia, serif'%3EFoto da Carol%3C/text%3E%3C/svg%3E"
-            alt="Placeholder elegante para foto da psicóloga Carolina Cunha Levek"
-            width="560"
-            height="700"
-            loading="lazy"
-          >
+          <div class="about-photo-frame">
+            <img
+              class="about-photo"
+              src="foto_carol_psico.png"
+              alt="Retrato da psicóloga Carolina Cunha Levek"
+              width="231"
+              height="346"
+              loading="lazy"
+            >
+          </div>
+          <p class="photo-note">Carolina Cunha Levek</p>
         </div>
 
         <div class="about-copy" data-reveal>
-          <span class="eyebrow">Sobre a Carol</span>
+          <span class="eyebrow">Sobre mim</span>
           <h2>Oi, eu sou a Carol</h2>
           <p>
             Acredito que cada relação é uma oportunidade de cuidado, aprendizado e transformação. Somos construídos a partir dos nossos vínculos e é através deles que também podemos nos reconstruir. Na terapia, meu olhar é guiado pela abordagem sistêmica, que entende que não somos isolados, mas parte de histórias, contextos e relações que influenciam quem somos. Meu trabalho é te oferecer um espaço seguro, acolhedor e sem julgamentos, onde você possa se compreender com mais profundidade e construir novas formas de se relacionar consigo mesma(o) e com o outro.
@@ -299,12 +341,12 @@
 
         <div class="process-grid">
           <article class="mode-card" data-reveal>
-            <span class="mode-icon" aria-hidden="true">Online</span>
+            <span class="mode-icon" aria-hidden="true">🌐</span>
             <h3>Online</h3>
             <p>Atendimento com a mesma profundidade e acolhimento, onde você estiver.</p>
           </article>
           <article class="mode-card" data-reveal>
-            <span class="mode-icon" aria-hidden="true">Presencial</span>
+            <span class="mode-icon" aria-hidden="true">🏠</span>
             <h3>Presencial</h3>
             <p>Um espaço reservado para a escuta, o cuidado e a construção de novos sentidos.</p>
           </article>
@@ -322,13 +364,13 @@
 
     <!-- Seção 8: Para quem é -->
     <section class="content-section audience-section">
-      <div class="container split-layout">
+      <div class="container split-layout audience-layout">
         <div class="section-heading" data-reveal>
           <span class="eyebrow">Perfil de acompanhamento</span>
           <h2>Essa terapia é para você que:</h2>
         </div>
 
-        <div class="list-panel" data-reveal>
+        <div class="list-panel audience-panel" data-reveal>
           <ul class="icon-list warm">
             <li>Quer entender melhor seus relacionamentos</li>
             <li>Sente que repete padrões</li>
@@ -351,7 +393,7 @@
           </p>
           <a
             class="btn btn-light"
-            href="https://wa.me/5500000000000?text=Olá%2C%20Carol!%20Gostaria%20de%20agendar%20minha%20sessão."
+            href="https://wa.me/554196581991?text=Olá%2C%20Carol!%20Gostaria%20de%20agendar%20minha%20sessão."
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -370,7 +412,19 @@
       </div>
       <div>
         <p>Atendimento online e presencial</p>
-        <p>WhatsApp: [INSERIR NÚMERO]</p>
+        <p>WhatsApp: +55 41 9658-1991</p>
+        <a
+          class="social-link"
+          href="https://www.instagram.com/vinculossinceros/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram do perfil Vínculos Sinceros"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3Zm0 1.5A3 3 0 0 0 4.5 7.5v9a3 3 0 0 0 3 3h9a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3Zm9.75 1.125a1.125 1.125 0 1 1 0 2.25 1.125 1.125 0 0 1 0-2.25ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5A3.5 3.5 0 1 0 12 15.5 3.5 3.5 0 0 0 12 8.5Z"></path>
+          </svg>
+          <span>@vinculossinceros</span>
+        </a>
       </div>
     </div>
   </footer>
@@ -381,8 +435,36 @@
       const cursor = document.querySelector(".cursor-ring");
       const heroBackdrop = document.querySelector(".hero-backdrop");
       const revealItems = document.querySelectorAll("[data-reveal]");
+      const navToggle = document.querySelector(".nav-toggle");
+      const mobileMenu = document.querySelector("#mobile-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-nav a");
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const coarsePointer = window.matchMedia("(pointer: coarse)").matches;
+
+      if (navToggle && mobileMenu) {
+        navToggle.addEventListener("click", function () {
+          const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+          navToggle.setAttribute("aria-expanded", String(!isOpen));
+          mobileMenu.hidden = isOpen;
+          document.body.classList.toggle("menu-open", !isOpen);
+        });
+
+        mobileLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            navToggle.setAttribute("aria-expanded", "false");
+            mobileMenu.hidden = true;
+            document.body.classList.remove("menu-open");
+          });
+        });
+
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 960) {
+            navToggle.setAttribute("aria-expanded", "false");
+            mobileMenu.hidden = true;
+            document.body.classList.remove("menu-open");
+          }
+        });
+      }
 
       if (!coarsePointer && !reducedMotion && cursor) {
         let cursorX = window.innerWidth / 2;

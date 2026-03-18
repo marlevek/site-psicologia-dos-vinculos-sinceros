@@ -1,4 +1,4 @@
-﻿# Sistema
+# Sistema
 Thumbs.db
 .DS_Store
 
@@ -9,7 +9,7 @@ Thumbs.db
 # Logs
 *.log
 
-# DependÃªncias futuras
+# Dependências futuras
 node_modules/
 
 # Build e cache
