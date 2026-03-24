@@ -285,8 +285,8 @@ select {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-  gap: 4rem;
+  grid-template-columns: minmax(0, 1.24fr) minmax(320px, 0.76fr);
+  gap: 2.4rem;
   align-items: center;
 }
 
@@ -316,8 +316,9 @@ select {
 }
 
 .hero-copy h1 {
-  max-width: 12ch;
+  max-width: 18ch;
   font-size: clamp(1.95rem, 3.8vw, 3.8rem);
+  text-wrap: pretty;
 }
 
 .hero-text,
@@ -333,7 +334,7 @@ select {
 }
 
 .hero-text {
-  max-width: 57ch;
+  max-width: 66ch;
   margin-top: 1.55rem;
   font-size: 1.08rem;
 }
@@ -390,6 +391,24 @@ select {
 .hero-art {
   display: flex;
   justify-content: flex-end;
+}
+
+.hero-photo-card {
+  width: min(100%, 420px);
+  padding: 1rem;
+  background: var(--white);
+  border: 1px solid rgba(46, 36, 56, 0.08);
+  border-radius: 34px;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 26px;
+  background: var(--white);
+  object-fit: contain;
 }
 
 .hero-art-card {
@@ -627,18 +646,75 @@ select {
 }
 
 .identification-panel {
-  max-width: 760px;
-  margin: 2.4rem auto 0;
+  max-width: none;
+  margin: 0;
   padding: 2rem;
   border-radius: 28px 28px 74px 28px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(251, 248, 253, 0.84));
 }
 
+.identification-cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1.14fr) minmax(280px, 0.86fr);
+  gap: 1.2rem;
+  margin-top: 2.4rem;
+  align-items: stretch;
+}
+
+.listening-panel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 28px 28px 74px 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(251, 248, 253, 0.84));
+  overflow: hidden;
+}
+
+.listening-panel::before,
+.listening-panel::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+}
+
+.listening-panel::before {
+  right: 1rem;
+  top: 50%;
+  width: 132px;
+  height: 132px;
+  border: 1px solid rgba(235, 207, 224, 0.7);
+  transform: translateY(-50%);
+}
+
+.listening-panel::after {
+  left: -24px;
+  bottom: -24px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(235, 207, 224, 0.8), transparent 72%);
+}
+
+.listening-panel .hero-quote {
+  font-size: clamp(1.2rem, 2.4vw, 1.85rem);
+  line-height: 1.15;
+}
+
+.listening-panel .quote-mark {
+  font-size: clamp(2.3rem, 5vw, 3.6rem);
+}
+
 .centered {
-  max-width: 17ch;
+  max-width: min(100%, 38rem);
   margin: 2.75rem auto 0;
-  text-align: center;
+}
+
+.identification-message {
+  max-width: min(100%, 44rem);
+  text-align: left;
+  text-wrap: pretty;
 }
 
 .highlight-quote {
@@ -785,6 +861,20 @@ select {
   gap: 1rem;
 }
 
+.benefits-note {
+  grid-column: 1 / -1;
+  margin: 1rem 0 0;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid rgba(123, 91, 166, 0.5);
+  background: rgba(251, 248, 253, 0.86);
+  font-size: 0.98rem;
+  color: var(--text-soft);
+}
+
+.benefits-note strong {
+  color: var(--text-main);
+}
+
 .benefit-item {
   position: relative;
   min-height: 172px;
@@ -811,8 +901,7 @@ select {
   transform: translateY(1rem);
 }
 
-.benefit-item:nth-child(1),
-.benefit-item:nth-child(5) {
+.benefit-item:nth-child(1) {
   grid-column: span 2;
 }
 
@@ -916,6 +1005,12 @@ select {
   margin-left: -3.8rem;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(239, 231, 247, 0.78));
+}
+
+.about-copy p {
+  text-wrap: pretty;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .about-copy::before {
@@ -1040,6 +1135,15 @@ select {
   margin: 1rem auto 2rem;
   max-width: 16ch;
   color: var(--white);
+}
+
+.highlight-quote.light.cta-message {
+  max-width: min(100%, 39rem);
+  margin: 1rem auto 2rem;
+  font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+  line-height: 1.35;
+  text-align: justify;
+  text-align-last: auto;
 }
 
 .section-separator {
@@ -1203,6 +1307,11 @@ select {
     margin-top: 0;
     margin-left: 0;
   }
+
+  .about-copy p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
 }
 
 @media (max-width: 960px) {
@@ -1250,14 +1359,14 @@ select {
     justify-content: flex-start;
   }
 
-  .hero-art-card {
+  .hero-photo-card {
+    width: min(100%, 300px);
+    margin-inline: auto;
     transform: none;
   }
 
-  .hero-portrait-wrap {
-    width: 104px;
-    height: 104px;
-    flex-basis: 104px;
+  .identification-cards {
+    grid-template-columns: 1fr;
   }
 
   .cards-grid,
@@ -1325,7 +1434,13 @@ select {
     width: 100%;
   }
 
+  .hero-photo-card {
+    width: min(82vw, 250px);
+    padding: 0.75rem;
+  }
+
   .hero-art-card,
+  .hero-photo-card,
   .soft-card,
   .mode-card,
   .list-panel,
@@ -1339,12 +1454,6 @@ select {
   .highlight-quote,
   .hero-quote {
     text-wrap: balance;
-  }
-
-  .hero-portrait-wrap {
-    width: 96px;
-    height: 96px;
-    flex-basis: 96px;
   }
 
   .floating-whatsapp {
