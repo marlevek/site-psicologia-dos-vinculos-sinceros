@@ -921,7 +921,7 @@ select {
 }
 
 .therapy-copy {
-  padding: 1.8rem 0.2rem 1.8rem 0.4rem;
+  padding: 1.8rem 1rem 1.8rem 1.6rem;
   max-width: 54ch;
 }
 
@@ -1643,7 +1643,7 @@ select {
 
   .therapy-copy {
     max-width: 100%;
-    padding: 1.6rem 0.8rem 0 0.8rem;
+    padding: 1.6rem 1rem 0 1.2rem;
   }
 
   .therapy-listening-panel {
@@ -1751,7 +1751,7 @@ select {
   }
 
   .therapy-copy {
-    padding-inline: 0;
+    padding-inline: 0.85rem;
   }
 
   .therapy-copy p {
