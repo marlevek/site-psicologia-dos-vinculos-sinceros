@@ -497,7 +497,7 @@ select {
 
 .hero-photo-stage {
   position: relative;
-  width: min(100%, 470px);
+  width: min(100%, 440px);
   min-height: 100%;
   display: flex;
   align-items: flex-end;
@@ -519,7 +519,7 @@ select {
   }
 
   .hero-photo-stage {
-    width: min(100%, 430px);
+    width: min(100%, 400px);
   }
 }
 
@@ -548,7 +548,7 @@ select {
 .hero-photo-card {
   position: relative;
   z-index: 1;
-  width: min(100%, 430px);
+  width: min(100%, 350px);
   padding: 0;
   background: transparent;
   border: 0;
@@ -559,9 +559,10 @@ select {
 
 .hero-photo {
   display: block;
-  width: 100%;
+  width: 88%;
   height: auto;
   aspect-ratio: auto;
+  margin-inline: auto;
   border-radius: 0;
   background: transparent;
   object-fit: contain;
@@ -711,7 +712,7 @@ select {
   margin-block: auto;
   justify-self: stretch;
   padding: 1.85rem 2.1rem;
-  background: linear-gradient(180deg, rgba(249, 238, 243, 0.95), rgba(244, 229, 236, 0.9));
+  background: linear-gradient(180deg, rgba(234, 194, 211, 0.96), rgba(220, 169, 191, 0.93));
 }
 
 .therapy-listening-panel .hero-quote {
@@ -1306,11 +1307,11 @@ select {
   }
 
   .hero-photo-stage {
-    width: min(100%, 360px);
+    width: min(100%, 340px);
   }
 
   .hero-photo-card {
-    width: min(100%, 320px);
+    width: min(100%, 280px);
     margin-inline: auto;
     transform: none;
   }
@@ -1414,11 +1415,11 @@ select {
   }
 
   .hero-photo-stage {
-    width: min(100%, 290px);
+    width: min(100%, 275px);
   }
 
   .hero-photo-card {
-    width: min(100%, 260px);
+    width: min(100%, 230px);
   }
 
   .mode-card,
