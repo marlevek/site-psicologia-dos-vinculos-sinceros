@@ -590,5 +590,71 @@
       }
     }());
   </script>
+
+  <!-- Eventos GA4 - Carolina Cunha Levek -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  // 1. WhatsApp - todos os links wa.me
+  // Identifica de QUAL botão veio (topo, herói, final, rodapé) pelo texto/posição
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function(el, index) {
+    el.addEventListener('click', function() {
+      var texto = this.innerText.trim().substring(0, 80) || 'sem_texto';
+      var posicao = 'desconhecida';
+
+      // Tenta identificar onde o botão está
+      if (this.closest('header, nav')) posicao = 'topo';
+      else if (this.closest('footer')) posicao = 'rodape';
+      else if (texto.toLowerCase().includes('primeira')) posicao = 'heroi';
+      else if (texto.toLowerCase().includes('minha sessão')) posicao = 'final';
+      else posicao = 'corpo';
+
+      gtag('event', 'click_whatsapp', {
+        botao_texto: texto,
+        botao_posicao: posicao,
+        link_url: this.href
+      });
+    });
+  });
+
+  // 2. Instagram
+  document.querySelectorAll('a[href*="instagram.com"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      gtag('event', 'click_instagram', {
+        link_url: this.href
+      });
+    });
+  });
+
+  // 3. Blog (saída para o blog)
+  document.querySelectorAll('a[href*="/blog"]').forEach(function(el) {
+    el.addEventListener('click', function() {
+      gtag('event', 'click_blog', {
+        link_url: this.href
+      });
+    });
+  });
+
+  // 4. Scroll depth - mede quanto da página as pessoas leem
+  // (ajuda a entender o problema dos 15s de engajamento)
+  var scrollMarcos = [25, 50, 75, 90];
+  var marcosDisparados = [];
+
+  window.addEventListener('scroll', function() {
+    var altura = document.documentElement.scrollHeight - window.innerHeight;
+    var percentual = Math.round((window.scrollY / altura) * 100);
+
+    scrollMarcos.forEach(function(marco) {
+      if (percentual >= marco && marcosDisparados.indexOf(marco) === -1) {
+        marcosDisparados.push(marco);
+        gtag('event', 'scroll_depth', {
+          percentual: marco
+        });
+      }
+    });
+  }, { passive: true });
+
+});
+</script>
 </body>
 </html>
